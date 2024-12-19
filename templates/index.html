@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Performance Report</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Employee Performance Report</h1>
+      <p>Name: {{ employee.name }}</p>
+      <p>ID: {{ employee.id }}</p>
+      <p>Department: {{ employee.department }}</p>
+      <p>Designation: {{ employee.designation }}</p>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Hours</th>
+            <th>Rating</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in performance_data %}
+          <tr>
+            <td>{{ data.project_name }}</td>
+            <td>{{ data.hours }}</td>
+            <td>{{ data.rating }}</td>
+            <td>{{ data.remarks }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>{{ contact_info }}</p>
+    </footer>
+  </body>
+</html>
