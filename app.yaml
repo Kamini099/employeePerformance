@@ -1,18 +1,15 @@
-runtime: python39
-instance_class: F2
-
-automatic_scaling:
-  target_cpu_utilization: 0.65
-  target_throughput_utilization: 0.75
+runtime: python39  # Change this to your runtime if not Python
+instance_class: F1  # Adjust based on your needs
 
 handlers:
 - url: /static
   static_dir: static
 
-# Skip unnecessary files and folders
 skip_files:
   - ^(.*/)?node_modules/.*$
   - ^(.*/)?\.git/.*$
   - ^(.*/)?__pycache__/.*$
-  - ^(.*/)?\.DS_Store$
   - ^(.*/)?\.vscode/.*$
+  - ^(.*/)?\.DS_Store$
+  - ^(.*/)?tmp/.*$
+  - ^(.*/)?.*\.log$
